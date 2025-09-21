@@ -21,9 +21,14 @@ public final class Order {
 
         }
         return subtotal;
-                items.stream().map(LineItem::lineTotal).reduce(Money.zero()
-                        , Money::add);
     }
-    public Money taxAtPercent(int percent) { }
-    public Money totalWithTax(int percent) { }
+    public Money taxAtPercent(int percent) {
+
+       return  subtotal().multiply((percent/100));
+
+    }
+    public Money totalWithTax(int percent) {
+        return subtotal ().add(taxAtPercent(percent));
+
+    }
 }
