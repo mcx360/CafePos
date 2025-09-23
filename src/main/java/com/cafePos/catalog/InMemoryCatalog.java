@@ -1,5 +1,7 @@
 package com.cafePos.catalog;
 
+import com.cafePos.common.Product;
+
 import java.util.*;
 public final class InMemoryCatalog implements Catalog {
     private final Map<String, Product> byId = new HashMap<>();

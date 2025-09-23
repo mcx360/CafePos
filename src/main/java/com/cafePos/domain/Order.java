@@ -1,5 +1,7 @@
 package com.cafePos.domain;
 
+import com.cafePos.common.Money;
+
 import java.util.ArrayList;
 import java.util.List;
 

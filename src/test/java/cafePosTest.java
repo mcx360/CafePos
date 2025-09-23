@@ -1,6 +1,15 @@
+import com.cafePos.common.Money;
+import com.cafePos.common.SimpleProduct;
+import com.cafePos.domain.LineItem;
+import com.cafePos.domain.Order;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class cafePosTest {
 
-    @Test void order_totals() {
+    @Test
+    void order_totals() {
         var p1 = new SimpleProduct("A", "A", Money.of(2.50));
         var p2 = new SimpleProduct("B", "B", Money.of(3.50));
         var o = new Order(1);
