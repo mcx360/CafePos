@@ -18,9 +18,9 @@ public final class Week2Demo {
             int taxPct = 10;
             System.out.println("Order #" + order.getID());
             System.out.println("Items: " + order.getItems().size());
-            System.out.println("Subtotal: " + order.subtotal());
-            System.out.println("Tax (" + taxPct + "%): " + order.taxAtPercent(taxPct));
-            System.out.println("Total: " + order.totalWithTax(taxPct));
+            System.out.println("Subtotal: " + order.subtotal().getAmount());
+            System.out.println("Tax (" + taxPct + "%): " + order.taxAtPercent(taxPct).getAmount());
+            System.out.println("Total: " + order.totalWithTax(taxPct).getAmount());
         }
     }
 
