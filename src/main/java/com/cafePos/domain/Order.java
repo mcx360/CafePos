@@ -20,15 +20,13 @@ public final class Order {
                 , Money::add);
     }
     public Money taxAtPercent(int percent) {
-        if (percent < 0) {
-            throw new IllegalArgumentException("Tax percent cannot be negative");
-        }
-        return subtotal().multiply(percent);
-    }
 
+       return  subtotal().multiply(percent/100.0);
+
+    }
     public Money totalWithTax(int percent) {
-        //no contract for tax since I assume it is theoretically possible to tax at any rate
-        return subtotal().add(taxAtPercent(percent));
+        return subtotal ().add(taxAtPercent(percent));
+
     }
 
     public long getID(){
