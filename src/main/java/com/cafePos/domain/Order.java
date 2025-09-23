@@ -21,7 +21,7 @@ public final class Order {
     }
     public Money taxAtPercent(int percent) {
 
-       return  subtotal().multiply((percent/100));
+       return  subtotal().multiply(percent/100.0);
 
     }
     public Money totalWithTax(int percent) {

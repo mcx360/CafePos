@@ -29,6 +29,11 @@ public final class Money implements Comparable<Money>{
         return new Money(this.amount.multiply(BigDecimal.valueOf(qty)));
     }
 
+    public Money multiply(double factor){
+        if(factor < 0) throw new IllegalArgumentException("Cant multiply by negative numbers!");
+        return new Money(this.amount.multiply(BigDecimal.valueOf(factor)));
+    }
+
     public BigDecimal getAmount(){
         return amount;
     }
@@ -37,4 +42,23 @@ public final class Money implements Comparable<Money>{
     public int compareTo(Money o) {
         return this.amount.compareTo(o.amount);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Money)) return false;
+        Money money = (Money) o;
+        return amount.equals(money.amount);
+    }
+
+    @Override
+    public int hashCode() {
+        return amount.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" + "amount=" + amount + '}';
+    }
+
 }
