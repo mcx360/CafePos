@@ -1,6 +1,7 @@
 package com.cafePos.domain;
 
 import com.cafePos.common.Money;
+import com.cafePos.payment.PaymentStrategy;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -35,6 +36,11 @@ public final class Order {
 
     public List<LineItem> getItems(){
         return items;
+    }
+
+    public void pay(PaymentStrategy strategy){
+        if (strategy == null) throw new IllegalArgumentException("strategy required");
+        strategy.pay(this);
     }
 
 }
