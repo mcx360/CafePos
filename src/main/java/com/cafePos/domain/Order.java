@@ -16,11 +16,12 @@ public final class Order {
 
     public Order(long id) { this.id = id; }
 
+
     public void addItem(LineItem li) {
         if(li.quantity()>0){
             items.add(li);
         }
-        notifyObservers("Item added!");
+        notifyObservers("Item added");
     }
     public Money subtotal() {
         return items.stream().map(LineItem::lineTotal).reduce(Money.zero()
@@ -47,11 +48,11 @@ public final class Order {
     public void pay(PaymentStrategy strategy){
         if (strategy == null) throw new IllegalArgumentException("strategy required");
         strategy.pay(this);
-        notifyObservers("Paid!");
+        notifyObservers("Paid");
     }
 
     public void register(OrderObserver o) {
-// TODO: add null check and add the observer
+
         if(Objects.nonNull(o)){
             if(!observers.contains(o)) {
                 observers.add(o);
@@ -61,13 +62,13 @@ public final class Order {
 
    }
   public void unregister(OrderObserver o) {
-// TODO: remove the observer if present
+
       observers.remove(o);
     }
 
 
     private void notifyObservers(String eventType) {
-// TODO: iterate observers and call updated(this,eventType)
+
        for(OrderObserver o :observers){
 
            o.updated(this,eventType);
@@ -76,7 +77,7 @@ public final class Order {
    }
 
     public void markReady() {
-//// TODO: just publish notifyObservers("ready")
+
         notifyObservers("ready");
        }
 
