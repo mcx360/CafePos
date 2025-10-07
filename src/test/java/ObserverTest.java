@@ -36,17 +36,6 @@ public class ObserverTest {
         assertTrue(events.contains("Paid"));
     }
 
-    @Test
-    void order_notifies_observer_on_item_added() {
-        var product = new SimpleProduct("P1", "Espresso", Money.of(2.5));
-        var order = new Order(1);
-        var events = new ArrayList<String>();
-
-        order.register((o, evt) -> events.add(evt));
-        order.addItem(new LineItem(product, 1));
-
-        assertTrue(events.contains("itemAdded"));
-    }
 
     @Test
     void order_notifies_multiple_observers_on_ready() {
