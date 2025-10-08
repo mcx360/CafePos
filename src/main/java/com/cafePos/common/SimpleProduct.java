@@ -1,6 +1,6 @@
 package com.cafePos.common;
 
-public class SimpleProduct implements Product{
+public final class SimpleProduct implements Product, Priced{
 
     private final String id;
     private final String name;
@@ -16,4 +16,7 @@ public class SimpleProduct implements Product{
     @Override public String id(){return id;}
     @Override public String name(){ return name;}
     @Override public Money basePrice() { return basePrice;}
+    public Money price() {
+        return basePrice;
+    }
 }
