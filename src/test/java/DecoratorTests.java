@@ -1,3 +1,4 @@
+import com.cafePos.Factory.ProductFactory;
 import com.cafePos.common.Money;
 import com.cafePos.common.Priced;
 import com.cafePos.common.Product;
@@ -10,6 +11,7 @@ import com.cafePos.domain.Order;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DecoratorTests {
     @Test
@@ -29,6 +31,12 @@ public class DecoratorTests {
         assertEquals("Espresso + Extra Shot + Oat Milk (Large)",
                 decorated.name());
         assertEquals(Money.of(4.50), ((Priced) decorated).price());
+    }
+
+    @Test void factory_parses_recipe() {
+        ProductFactory f = new ProductFactory();
+        Product p = f.create("ESP+SHOT+OAT");
+        assertTrue(p.name().contains("Espresso") && p.name().contains("Oat Milk"));
     }
 
     @Test void order_uses_decorated_price() {
