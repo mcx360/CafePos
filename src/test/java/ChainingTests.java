@@ -19,6 +19,33 @@ public class ChainingTests {
         Product factoryMade = new ProductFactory().create("ESP+SHOT+OAT+L");
         Product manuallyMade = new SizeLarge(new OatMilk(new ExtraShot(new SimpleProduct("P-ESP","Espresso", Money.of(2.50)))));
         assertEquals(factoryMade.name(), manuallyMade.name());
+    }
+
+    @Test
+    void FactoryChainingVersusManualChainingPriceCheck(){
+        Product factoryMade = new ProductFactory().create("ESP+SHOT+OAT+L");
+        Product manuallyMade = new SizeLarge(new OatMilk(new ExtraShot(new SimpleProduct("P-ESP","Espresso", Money.of(2.50)))));
+        assertEquals(factoryMade.basePrice(), manuallyMade.basePrice());
+    }
+
+    @Test
+    void checkOrders(){
+        Product factoryMade = new ProductFactory().create("ESP+SHOT+OAT+L");
+        Product manuallyMade = new SizeLarge(new OatMilk(new ExtraShot(new SimpleProduct("P-ESP","Espresso", Money.of(2.50)))));
+
+        LineItem factoryli = new LineItem(factoryMade, 1);
+        LineItem manualli = new LineItem(manuallyMade, 1);
+
+        Order factoryOrder = new Order(1);
+        factoryOrder.addItem(factoryli);
+        factoryOrder.taxAtPercent(10);
+
+        Order manualOrder = new Order(2);
+        manualOrder.addItem(manualli);
+        manualOrder.taxAtPercent(10);
+
+        assertEquals(factoryOrder.subtotal(), manualOrder.subtotal());
 
     }
+
 }
