@@ -10,6 +10,7 @@ public final class Money implements Comparable<Money>{
         if(value<0) throw new IllegalArgumentException("Money amount cant be a negative!");
         return new Money(BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP));
     }
+
     public static Money zero() {
         return new Money(BigDecimal.ZERO);
     }
