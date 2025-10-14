@@ -19,6 +19,7 @@ public class OrderManagerGod {
         }
         if (qty <= 0) qty = 1;
         Money subtotal = unitPrice.multiply(qty);
+
         Money discount = Money.zero();
         if (discountCode != null) {
             if (discountCode.equalsIgnoreCase("LOYAL5")) {
@@ -32,8 +33,8 @@ public class OrderManagerGod {
             }
             LAST_DISCOUNT_CODE = discountCode;
         }
-        Money discounted =
-                Money.of((subtotal.getAmount().subtract(discount.getAmount())).doubleValue());
+
+        Money discounted = Money.of((subtotal.getAmount().subtract(discount.getAmount())).doubleValue());
         if (discounted.getAmount().signum() < 0) discounted = Money.zero();
         var tax = Money.of((discounted.getAmount().multiply(java.math.BigDecimal.valueOf(TAX_PERCENT)).divide(java.math.BigDecimal.valueOf(100))).doubleValue());
         var total = discounted.add(tax);
@@ -50,12 +51,12 @@ public class OrderManagerGod {
         }
         StringBuilder receipt = new StringBuilder();
         receipt.append("Order (").append(recipe).append(") x").append(qty).append("\n");
-                receipt.append("Subtotal: ").append(subtotal).append("\n");
+        receipt.append("Subtotal: ").append(subtotal).append("\n");
         if (discount.getAmount().signum() > 0) {
             receipt.append("Discount: -").append(discount).append("\n");
         }
         receipt.append("Tax (").append(TAX_PERCENT).append("%): ").append(tax).append("\n");
-                receipt.append("Total: ").append(total);
+        receipt.append("Total: ").append(total);
         String out = receipt.toString();
         if (printReceipt) {
             System.out.println(out);
