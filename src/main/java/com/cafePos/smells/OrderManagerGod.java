@@ -4,8 +4,10 @@ import com.cafePos.Factory.ProductFactory;
 import com.cafePos.common.Product;
 
 public class OrderManagerGod {
-    public static int TAX_PERCENT = 10;
-    public static String LAST_DISCOUNT_CODE = null;
+    public static int TAX_PERCENT = 10; //primative obsession & static state
+    public static String LAST_DISCOUNT_CODE = null; //primative obsession & static state
+
+    //God Class, method performs creation, pricing, discounting, tax, payment I/O, and printing.
     public static String process(String recipe, int qty, String paymentType, String discountCode, boolean printReceipt) {
         ProductFactory factory = new ProductFactory();
         Product product = factory.create(recipe);
@@ -23,7 +25,7 @@ public class OrderManagerGod {
         Money discount = Money.zero();
         if (discountCode != null) {
             if (discountCode.equalsIgnoreCase("LOYAL5")) {
-                discount = Money.of((subtotal.getAmount().multiply(java.math.BigDecimal.valueOf(5)).divide(java.math.BigDecimal.valueOf(100)).doubleValue()));
+                discount = Money.of((subtotal.getAmount().multiply(java.math.BigDecimal.valueOf(5)).divide(java.math.BigDecimal.valueOf(100)).doubleValue())); //duplicate logic & shotgun surgery risk
             } else if (discountCode.equalsIgnoreCase("COUPON1")) {
                 discount = Money.of(1.00);
             } else if (discountCode.equalsIgnoreCase("NONE")) {
@@ -31,12 +33,12 @@ public class OrderManagerGod {
             } else {
                 discount = Money.zero();
             }
-            LAST_DISCOUNT_CODE = discountCode;
+            LAST_DISCOUNT_CODE = discountCode; //primitive obsession
         }
 
         Money discounted = Money.of((subtotal.getAmount().subtract(discount.getAmount())).doubleValue());
         if (discounted.getAmount().signum() < 0) discounted = Money.zero();
-        var tax = Money.of((discounted.getAmount().multiply(java.math.BigDecimal.valueOf(TAX_PERCENT)).divide(java.math.BigDecimal.valueOf(100))).doubleValue());
+        var tax = Money.of((discounted.getAmount().multiply(java.math.BigDecimal.valueOf(TAX_PERCENT)).divide(java.math.BigDecimal.valueOf(100))).doubleValue()); //duplicate logic & shotgun surgery risk
         var total = discounted.add(tax);
         if (paymentType != null) {
             if (paymentType.equalsIgnoreCase("CASH")) {
@@ -55,7 +57,7 @@ public class OrderManagerGod {
         if (discount.getAmount().signum() > 0) {
             receipt.append("Discount: -").append(discount).append("\n");
         }
-        receipt.append("Tax (").append(TAX_PERCENT).append("%): ").append(tax).append("\n");
+        receipt.append("Tax (").append(TAX_PERCENT).append("%): ").append(tax).append("\n"); //shotgun surgery risk
         receipt.append("Total: ").append(total);
         String out = receipt.toString();
         if (printReceipt) {
