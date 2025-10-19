@@ -59,7 +59,8 @@ public final class Money implements Comparable<Money>{
 
     @Override
     public String toString() {
-        return "Money{" + "amount=" + amount + '}';
+
+        return amount.setScale(2, java.math.RoundingMode.HALF_UP).toPlainString();
     }
 
 }

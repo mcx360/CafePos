@@ -18,7 +18,7 @@ public class ChainingTests {
     void FactoryChainingVersusManualChaining(){
         Product factoryMade = new ProductFactory().create("ESP+SHOT+OAT+L");
         Product manuallyMade = new SizeLarge(new OatMilk(new ExtraShot(new SimpleProduct("P-ESP","Espresso", Money.of(2.50)))));
-        assertEquals(factoryMade.name(), manuallyMade.name());
+        assertEquals(factoryMade.name(),manuallyMade.name());
     }
 
     @Test

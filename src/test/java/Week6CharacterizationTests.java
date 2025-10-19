@@ -1,3 +1,5 @@
+import com.cafePos.common.Money;
+import com.cafePos.pricing.*;
 import com.cafePos.smells.OrderManagerGod;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,5 +29,31 @@ public class Week6CharacterizationTests {
         assertTrue(receipt.contains("Discount: -Money{amount=1.00}"));
         assertTrue(receipt.contains("Tax (10%): Money{amount=0.23}"));
         assertTrue(receipt.contains("Total: Money{amount=2.53}"));
+
+
+    }
+
+    // DiscountPolicy test
+    @Test void loyalty_discount_5_percent() {
+        DiscountPolicy d = new LoyaltyPercentDiscount(5);
+        assertEquals(Money.of(0.39), d.discountOf(Money.of(7.80)));
+    }
+    // TaxPolicy test
+    @Test void fixed_rate_tax_10_percent() {
+        TaxPolicy t = new FixedRateTaxPolicy(10);
+        assertEquals(Money.of(0.74), t.taxOn(Money.of(7.41)));
+    }
+    // PricingService test
+    @Test void pricing_pipeline() {
+        var pricing = new PricingService(new LoyaltyPercentDiscount(5), new
+                FixedRateTaxPolicy(10));
+        var pr = pricing.price(Money.of(7.80));
+        assertEquals(Money.of(0.39), pr.discount());
+        assertEquals(0, pr.subtotal().getAmount()
+                .subtract(pr.discount().getAmount())
+                .compareTo(Money.of(7.41).getAmount()));
+        ;
+        assertEquals(Money.of(0.74), pr.tax());
+        assertEquals(Money.of(8.15), pr.total());
     }
 }
