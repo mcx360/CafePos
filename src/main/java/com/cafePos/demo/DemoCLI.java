@@ -65,7 +65,7 @@ public class DemoCLI {
 
         li = new LineItem(product,qty);
         order.addItem(li);
-
+           
 
         String receipt = checkout.checkout(recipe,qty,paymentStrategy,order);
         System.out.println("\n Your Receipt:\n" + receipt);
