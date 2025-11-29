@@ -3,7 +3,6 @@ package com.cafePos.domain;
 import com.cafePos.common.Money;
 import com.cafePos.payment.PaymentStrategy;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
