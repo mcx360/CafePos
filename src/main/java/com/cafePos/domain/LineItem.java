@@ -1,8 +1,8 @@
 package com.cafePos.domain;
 
-import com.cafePos.common.Money;
-import com.cafePos.common.Product;
-import com.cafePos.common.Priced;
+import com.cafePos.domain.common.Money;
+import com.cafePos.domain.common.Product;
+import com.cafePos.domain.common.Priced;
 
 public final class LineItem {
     private final Product product;

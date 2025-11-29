@@ -2,7 +2,7 @@ package com.cafePos.ui;
 
 import com.cafePos.app.CheckoutService;
 import com.cafePos.domain.*;
-import com.cafePos.Factory.ProductFactory;
+import com.cafePos.domain.Factory.ProductFactory;
 
 public final class OrderController {
     private final OrderRepository repo;

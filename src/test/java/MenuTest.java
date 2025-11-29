@@ -1,8 +1,8 @@
-import com.cafePos.menu.Menu;
-import com.cafePos.menu.MenuComponent;
-import com.cafePos.menu.MenuItem;
-import com.cafePos.common.Money;
-import com.cafePos.state.OrderFSM;
+import com.cafePos.domain.menu.Menu;
+import com.cafePos.domain.menu.MenuComponent;
+import com.cafePos.domain.menu.MenuItem;
+import com.cafePos.domain.common.Money;
+import com.cafePos.domain.state.OrderFSM;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;

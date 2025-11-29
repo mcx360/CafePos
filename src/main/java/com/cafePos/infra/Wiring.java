@@ -1,6 +1,8 @@
 package com.cafePos.infra;
 import com.cafePos.app.CheckoutService;
-import com.cafePos.pricing.*;
+import com.cafePos.domain.pricing.FixedRateTaxPolicy;
+import com.cafePos.domain.pricing.LoyaltyPercentDiscount;
+import com.cafePos.domain.pricing.PricingService;
 import com.cafePos.domain.*;
 public final class Wiring {
     public static record Components(OrderRepository repo, PricingService pricing, CheckoutService checkout) {

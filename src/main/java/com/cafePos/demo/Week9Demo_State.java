@@ -1,6 +1,6 @@
 package com.cafePos.demo;
 
-import com.cafePos.state.OrderFSM;
+import com.cafePos.domain.state.OrderFSM;
 public final class Week9Demo_State {
     public static void main(String[] args) {
         OrderFSM fsm = new OrderFSM();

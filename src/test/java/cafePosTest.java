@@ -1,5 +1,5 @@
-import com.cafePos.common.Money;
-import com.cafePos.common.SimpleProduct;
+import com.cafePos.domain.common.Money;
+import com.cafePos.domain.common.SimpleProduct;
 import com.cafePos.domain.LineItem;
 import com.cafePos.domain.Order;
 import org.junit.jupiter.api.Test;

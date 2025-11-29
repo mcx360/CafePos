@@ -1,18 +1,17 @@
 package com.cafePos.demo;
 
-import com.cafePos.Factory.ProductFactory;
-import com.cafePos.common.Product;
-import com.cafePos.common.SimpleProduct;
+import com.cafePos.domain.Factory.ProductFactory;
+import com.cafePos.domain.common.Product;
 import com.cafePos.domain.LineItem;
 import com.cafePos.domain.Order;
-import com.cafePos.payment.CardPayment;
-import com.cafePos.payment.CashPayment;
-import com.cafePos.payment.PaymentStrategy;
-import com.cafePos.payment.WalletPayment;
-import com.cafePos.pricing.FixedRateTaxPolicy;
-import com.cafePos.pricing.LoyaltyPercentDiscount;
-import com.cafePos.pricing.PricingService;
-import com.cafePos.pricing.ReceiptPrinter;
+import com.cafePos.domain.payment.CardPayment;
+import com.cafePos.domain.payment.CashPayment;
+import com.cafePos.domain.payment.PaymentStrategy;
+import com.cafePos.domain.payment.WalletPayment;
+import com.cafePos.domain.pricing.FixedRateTaxPolicy;
+import com.cafePos.domain.pricing.LoyaltyPercentDiscount;
+import com.cafePos.domain.pricing.PricingService;
+import com.cafePos.domain.pricing.ReceiptPrinter;
 import com.cafePos.smells.CheckoutService;
 
 import java.util.Scanner;

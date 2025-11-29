@@ -1,7 +1,7 @@
 package com.cafePos.demo;
 
-import com.cafePos.Factory.ProductFactory;
-import com.cafePos.common.Product;
+import com.cafePos.domain.Factory.ProductFactory;
+import com.cafePos.domain.common.Product;
 import com.cafePos.domain.LineItem;
 import com.cafePos.domain.Order;
 

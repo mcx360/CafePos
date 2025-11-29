@@ -1,5 +1,5 @@
-import com.cafePos.common.Money;
-import com.cafePos.pricing.*;
+import com.cafePos.domain.common.Money;
+import com.cafePos.domain.pricing.*;
 import com.cafePos.smells.OrderManagerGod;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,7 +1,11 @@
 package com.cafePos.demo;
+import com.cafePos.app.command.AddItemCommand;
+import com.cafePos.app.command.OrderService;
+import com.cafePos.app.command.PayOrderCommand;
+import com.cafePos.app.command.PosRemote;
 import com.cafePos.domain.*;
-import com.cafePos.payment.*;
-import com.cafePos.command.*;
+import com.cafePos.domain.payment.CardPayment;
+
 public final class Week8Demo_Commands {
     public static void main(String[] args) {
         Order order = new Order(123);

@@ -1,8 +1,8 @@
-import com.cafePos.pricing.DiscountPolicy;
-import com.cafePos.pricing.FixedCouponDiscount;
-import com.cafePos.pricing.LoyaltyPercentDiscount;
-import com.cafePos.pricing.NoDiscount;
-import com.cafePos.common.Money;
+import com.cafePos.domain.pricing.DiscountPolicy;
+import com.cafePos.domain.pricing.FixedCouponDiscount;
+import com.cafePos.domain.pricing.LoyaltyPercentDiscount;
+import com.cafePos.domain.pricing.NoDiscount;
+import com.cafePos.domain.common.Money;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

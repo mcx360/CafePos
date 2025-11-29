@@ -1,7 +1,8 @@
 
 package com.cafePos.demo;
-import com.cafePos.menu.*;
-import com.cafePos.common.Money;
+import com.cafePos.domain.menu.Menu;
+import com.cafePos.domain.menu.MenuItem;
+import com.cafePos.domain.common.Money;
 public final class Week9Demo_Menu {
     public static void main(String[] args) {
         Menu root = new Menu("CAFÉ MENU");

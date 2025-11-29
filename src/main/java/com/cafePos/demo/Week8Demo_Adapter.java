@@ -1,7 +1,7 @@
 package com.cafePos.demo;
 
-import com.cafePos.pricing.ReceiptPrinter;
-import com.cafePos.printing.*;
+import com.cafePos.infra.printing.LegacyPrinterAdapter;
+import com.cafePos.infra.printing.Printer;
 import vendor.legacy.LegacyThermalPrinter;
 public final class Week8Demo_Adapter {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package com.cafePos.domain;
 
-import com.cafePos.common.Money;
-import com.cafePos.payment.PaymentStrategy;
+import com.cafePos.domain.common.Money;
+import com.cafePos.domain.payment.PaymentStrategy;
 
 import java.util.ArrayList;
 import java.util.List;

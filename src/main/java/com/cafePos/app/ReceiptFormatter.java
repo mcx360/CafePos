@@ -1,10 +1,12 @@
 package com.cafePos.app;
 
 import com.cafePos.domain.LineItem;
+import com.cafePos.domain.pricing.PricingService;
+
 import java.util.List;
 
 public final class ReceiptFormatter {
-    public String format(long id, List<LineItem> items, com.cafePos.pricing.PricingService.PricingResult pr, int taxPercent) {
+    public String format(long id, List<LineItem> items, PricingService.PricingResult pr, int taxPercent) {
         StringBuilder sb = new StringBuilder();
         sb.append("Order #").append(id).append("\n");
         for (LineItem li : items) {

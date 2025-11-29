@@ -1,9 +1,9 @@
-import com.cafePos.common.Money;
-import com.cafePos.common.SimpleProduct;
+import com.cafePos.domain.common.Money;
+import com.cafePos.domain.common.SimpleProduct;
 import com.cafePos.domain.LineItem;
 import com.cafePos.domain.Order;
-import com.cafePos.payment.CardPayment;
-import com.cafePos.payment.PaymentStrategy;
+import com.cafePos.domain.payment.CardPayment;
+import com.cafePos.domain.payment.PaymentStrategy;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;

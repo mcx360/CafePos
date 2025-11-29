@@ -1,10 +1,10 @@
 package com.cafePos.demo;
 
-import com.cafePos.Factory.ProductFactory;
-import com.cafePos.pricing.FixedRateTaxPolicy;
-import com.cafePos.pricing.LoyaltyPercentDiscount;
-import com.cafePos.pricing.PricingService;
-import com.cafePos.pricing.ReceiptPrinter;
+import com.cafePos.domain.Factory.ProductFactory;
+import com.cafePos.domain.pricing.FixedRateTaxPolicy;
+import com.cafePos.domain.pricing.LoyaltyPercentDiscount;
+import com.cafePos.domain.pricing.PricingService;
+import com.cafePos.domain.pricing.ReceiptPrinter;
 import com.cafePos.smells.CheckoutService;
 import com.cafePos.smells.OrderManagerGod;
 
