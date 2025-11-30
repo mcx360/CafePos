@@ -1,4 +1,4 @@
-package com.cafePos.ui;
+package com.cafePos.presentation;
 
 public final class ConsoleView {
     public void print(String s) {

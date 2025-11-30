@@ -1,4 +1,4 @@
-package com.cafePos.ui;
+package com.cafePos.presentation;
 
 import com.cafePos.app.CheckoutService;
 import com.cafePos.domain.*;

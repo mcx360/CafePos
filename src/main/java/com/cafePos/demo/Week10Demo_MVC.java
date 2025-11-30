@@ -1,10 +1,8 @@
 package com.cafePos.demo;
 
-import com.cafePos.ui.ConsoleView;
-import com.cafePos.ui.OrderController;
+import com.cafePos.presentation.ConsoleView;
+import com.cafePos.presentation.OrderController;
 import com.cafePos.infra.Wiring;
-import com.cafePos.ui.OrderController;
-import com.cafePos.ui.ConsoleView;
 
 public final class Week10Demo_MVC {
     public static void main(String[] args) {
