@@ -1,4 +1,3 @@
-
 package com.cafePos.demo;
 import com.cafePos.domain.menu.Menu;
 import com.cafePos.domain.menu.MenuItem;
